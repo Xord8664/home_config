@@ -1,0 +1,53 @@
+! special
+*.foreground:   #ffffff
+*.background:   #000000
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #000000
+*.color8:       #222222
+
+! red
+*.color1:       #cc0403
+*.color9:       #a50c09
+
+! green
+*.color2:       #19cb00
+*.color10:      #23fd00
+
+! yellow
+*.color3:       #fffb00
+*.color11:      #fffd00
+
+! blue
+*.color4:       #676cff
+*.color12:      #2d34ff
+
+! magenta
+*.color5:       #cb1ed1
+*.color13:      #fd28ff
+
+! cyan
+*.color6:       #0dcdcd
+*.color14:      #14ffff
+
+! white
+*.color7:       #f2f2f2
+*.color15:      #ffffff
+
+XTerm*vt100.translations: #override \
+    Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
+    Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
+xterm*AllowBoldFonts: false
+! XTerm.vt100.locale: true
+XTerm.vt100.backarrowKey: false
+XTerm.ttyModes: erase ^?
+XTerm.vt100.saveLines: 4096
+XTerm*vt100.Translations:       #override\n\
+  Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+XTerm*boldMode: false
+XTerm*LoginShell: True
+! XTerm*utf8: 1
+! XTerm*VT100.utf8Fonts.font: terminus-9
+XTerm*Geometry: 150x55+0+0
