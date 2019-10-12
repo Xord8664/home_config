@@ -8,9 +8,10 @@ function run {
 }
 
 run volumeicon
-run light-locker
+run xscreensaver
 run xrdb -load ~/.Xresourses
 run nm-applet
+run conky -c ./.config/conky.conf
 #exec sleep 1 ; feh --bg-fill Pictures/236642.jpg
 #exec sleep 1 ; xrandr --output DVI-1 --pos 0x124
 #exec redshift-gtk
