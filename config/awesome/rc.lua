@@ -527,6 +527,7 @@ end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
+    c.maximized, c.maximized_vertical, c.maximized_horizontal = false, false, false
     -- buttons for the titlebar
     local buttons = gears.table.join(
         awful.button({ }, 1, function()
@@ -565,6 +566,10 @@ client.connect_signal("request::titlebars", function(c)
 --    }
     awful.titlebar.hide(c)
 end)
+
+-- callback = function(c)
+--    c.maximized, c.maximized_vertical, c.maximized_horizontal = false, false, false
+-- end
 
 -- Enable sloppy focus, so that focus follows mouse.
 -- client.connect_signal("mouse::enter", function(c)
