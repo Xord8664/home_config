@@ -12,6 +12,7 @@ run xscreensaver
 run xrdb -load ~/.Xresourses
 run nm-applet
 run conky -c ./.config/conky.conf
+run xrandr --output DisplayPort-0 --right-of HDMI-A-0
 #exec sleep 1 ; feh --bg-fill Pictures/236642.jpg
 #exec sleep 1 ; xrandr --output DVI-1 --pos 0x124
 #exec redshift-gtk
