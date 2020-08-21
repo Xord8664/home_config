@@ -48,10 +48,10 @@ end
 beautiful.init("./.config/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xterm"
+terminal = "xfce4-terminal"
 -- editor = os.getenv("EDITOR") or "nano"
 editor = "vim"
-editor_cmd = terminal .. " -e " .. editor
+editor_cmd = terminal .. " -x " .. editor
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -90,8 +90,9 @@ myawesomemenu = {
    { "restart", awesome.restart },
    { "quit", function() awesome.quit() end },
 }
-
+xdg_menu = require("archmenu")
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                    { "Applications", xdgmenu },
                                     { "open terminal", terminal }
                                   }
                         })
@@ -141,7 +142,7 @@ local tasklist_buttons = gears.table.join(
                                               end
                                           end),
                      awful.button({ }, 3, function()
-                                              awful.menu.client_list({ theme = { width = 250 } })
+                                              awful.menu.client_list({ theme = { width = 500 } })
                                           end),
                      awful.button({ }, 4, function ()
                                               awful.client.focus.byidx(1)
@@ -275,13 +276,15 @@ globalkeys = gears.table.join(
         {description = "go back", group = "client"}),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.spawn("xterm -e tmux") end,
+    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal .. " -x tmux") end,
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
 --    awful.key({ modkey, "Shift"   }, "q", awesome.quit,
 --              {description = "quit awesome", group = "awesome"}),
 
+    awful.key({ modkey, "Shift"   }, "g",     function () awful.spawn.with_shell("scrot ~/%Y-%m-%d-%T-screenshot.png")          end,
+              {description = "increase master width factor", group = "layout"}),
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
