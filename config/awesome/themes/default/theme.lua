@@ -11,7 +11,7 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "Ubuntu Mono 9"
+theme.font          = "Ubuntu Mono 11"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
@@ -63,7 +63,7 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 -- menu_[border_color|border_width]
 theme.menu_submenu_icon = themes_path.."default/submenu.png"
 theme.menu_height = dpi(15)
-theme.menu_width  = dpi(100)
+theme.menu_width  = dpi(250)
 
 -- You can add as many variables as
 -- you wish and access them by using
@@ -98,7 +98,8 @@ theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/m
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
 -- theme.wallpaper = "~/.config/awesome/themes/default/prompt.png"
-theme.wallpaper = "~/.config/awesome/themes/default/bg.jpg"
+theme.wallpaper = "~/Pictures/wp/wp1.jpg"
+
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
