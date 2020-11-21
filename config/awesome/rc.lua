@@ -432,7 +432,7 @@ for i = 1, 9 do
 
         awful.key({ modkey }, "z",
 	          function ()
-                      awful.util.spawn("xscreensaver-command -lock", false)
+                      awful.util.spawn("cinnamon-screensaver-command -l", false)
                   end)
     )
 end

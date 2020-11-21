@@ -1,17 +1,16 @@
  local menu98edb85b00d9527ad5acebe451b3fae6 = {
      {"Application Finder", "xfce4-appfinder", "/usr/share/icons/gnome/16x16/actions/edit-find.png" },
+     {"Archive Manager", "file-roller "},
      {"Atom", "env ATOM_DISABLE_SHELLING_OUT_FOR_ENVIRONMENT=false /usr/bin/atom ", "/usr/share/icons/hicolor/16x16/apps/atom.png" },
      {"Disks", "gnome-disks"},
      {"Double Commander", "doublecmd ", "/usr/share/pixmaps/doublecmd.png" },
      {"Nemo", "nemo ", "/usr/share/icons/gnome/16x16/places/folder.png" },
      {"PlayOnLinux", "playonlinux ", "/usr/share/pixmaps/playonlinux.png" },
-     {"Redshift", "redshift-gtk"},
      {"Remarkable", "/usr/bin/remarkable "},
      {"Software Token", "stoken-gui", "/usr/share/pixmaps/stoken-gui.png" },
      {"Software Token (small)", "stoken-gui --small", "/usr/share/pixmaps/stoken-gui.png" },
      {"Vim", "xterm -e vim ", "/usr/share/icons/hicolor/48x48/apps/gvim.png" },
      {"Winetricks", "winetricks --gui"},
-     {"Xarchiver", "xarchiver ", "/usr/share/icons/hicolor/16x16/apps/xarchiver.png" },
      {"nitrogen", "nitrogen", "/usr/share/icons/hicolor/16x16/apps/nitrogen.png" },
  }
 
@@ -29,8 +28,9 @@
 
  local menud334dfcea59127bedfcdbe0a3ee7f494 = {
      {"Converseen", "converseen", "/usr/share/icons/hicolor/256x256/apps/converseen.png" },
-     {"Flameshot", "flameshot", "/usr/share/icons/hicolor/48x48/apps/flameshot.png" },
+     {"Flameshot", "flameshot", "/usr/share/icons/hicolor/48x48/apps/org.flameshot.Flameshot.png" },
      {"GNU Image Manipulation Program", "gimp-2.10 ", "/usr/share/icons/hicolor/16x16/apps/gimp.png" },
+     {"Geeqie", "geeqie -r ", "/usr/share/pixmaps/geeqie.png" },
      {"LibreOffice Draw", "libreoffice --draw ", "/usr/share/icons/hicolor/16x16/apps/libreoffice-draw.png" },
      {"Viewnior", "viewnior ", "/usr/share/icons/hicolor/16x16/apps/viewnior.png" },
      {"XDvi", "xdvi "},
@@ -39,9 +39,10 @@
  local menuc8205c7636e728d448c2774e6a4a944b = {
      {"Avahi SSH Server Browser", "/usr/bin/bssh", "/usr/share/icons/gnome/16x16/devices/network-wired.png" },
      {"Avahi VNC Server Browser", "/usr/bin/bvnc", "/usr/share/icons/gnome/16x16/devices/network-wired.png" },
+     {"Chromium", "/usr/bin/chromium ", "/usr/share/icons/hicolor/16x16/apps/chromium.png" },
      {"Discord", "/usr/bin/discord", "/usr/share/pixmaps/discord.png" },
      {"FileZilla", "filezilla", "/usr/share/icons/hicolor/16x16/apps/filezilla.png" },
-     {"Google Chrome", "/usr/bin/google-chrome-stable ", "/usr/share/icons/hicolor/16x16/apps/google-chrome.png" },
+     {"Firefox", "/usr/lib/firefox/firefox ", "/usr/share/icons/hicolor/16x16/apps/firefox.png" },
      {"Links", "xlinks -g", "/usr/share/pixmaps/links-48x48.xpm" },
      {"Remote Viewer", "remote-viewer ", "/usr/share/icons/hicolor/16x16/apps/virt-viewer.png" },
      {"Steam (Runtime)", "/usr/bin/steam-runtime ", "/usr/share/icons/hicolor/16x16/apps/steam.png" },
@@ -66,10 +67,11 @@
 
  local menue6f43c40ab1c07cd29e4e83e4ef6bf85 = {
      {"Atom", "env ATOM_DISABLE_SHELLING_OUT_FOR_ENVIRONMENT=false /usr/bin/atom ", "/usr/share/icons/hicolor/16x16/apps/atom.png" },
-     {"Bless Hex Editor", "bless ", "/usr/share/pixmaps/bless-48x48.png" },
+     {"Bless Hex Editor", "bless ", "/usr/share/icons/hicolor/48x48/apps/bless.png" },
      {"CMake", "cmake-gui ", "/usr/share/icons/hicolor/32x32/apps/CMakeSetup.png" },
      {"DBeaver Community", "dbeaver", "/usr/share/icons/hicolor/16x16/apps/dbeaver.png" },
      {"Electron", "electron5 ", "/usr/share/pixmaps/electron5.png" },
+     {"Electron", "electron6 ", "/usr/share/pixmaps/electron6.png" },
      {"FLUID", "fluid ", "/usr/share/icons/hicolor/32x32/apps/fluid.png" },
      {"GdaBrowser", "gda-browser-5.0", "/usr/share/pixmaps/gda-browser-5.0.png" },
      {"Geany", "geany ", "/usr/share/icons/hicolor/16x16/apps/geany.png" },
@@ -94,7 +96,9 @@
      {"GNOME MPlayer", "gnome-mplayer ", "/usr/share/icons/hicolor/16x16/apps/gnome-mplayer.png" },
      {"Kdenlive", "kdenlive ", "/usr/share/icons/hicolor/16x16/apps/kdenlive.png" },
      {"LMMS", "lmms ", "/usr/share/icons/hicolor/16x16/apps/lmms.png" },
+     {"PulseAudio System Tray", "pasystray", "/usr/share/pixmaps/pasystray.png" },
      {"PulseAudio Volume Control", "pavucontrol", "/usr/share/icons/gnome/16x16/apps/multimedia-volume-control.png" },
+     {"PulseEffects", "pulseeffects"},
      {"Qt V4L2 test Utility", "qv4l2", "/usr/share/icons/hicolor/16x16/apps/qv4l2.png" },
      {"Qt V4L2 video capture utility", "qvidcap", "/usr/share/icons/hicolor/16x16/apps/qvidcap.png" },
      {"SimpleScreenRecorder", "simplescreenrecorder --logfile", "/usr/share/icons/hicolor/16x16/apps/simplescreenrecorder.png" },
@@ -109,8 +113,7 @@
 
  local menuee69799670a33f75d45c57d1d1cd0ab3 = {
      {"Avahi Zeroconf Browser", "/usr/bin/avahi-discover", "/usr/share/icons/gnome/16x16/devices/network-wired.png" },
-     {"Cool Retro Term", "cool-retro-term", "/usr/share/icons/hicolor/32x32/apps/cool-retro-term.png" },
-     {"Disk Usage Analyzer", "baobab"},
+     {"Disk Usage Analyzer", "baobab "},
      {"GParted", "/usr/bin/gparted ", "/usr/share/icons/hicolor/16x16/apps/gparted.png" },
      {"GSmartControl", "/usr/bin/gsmartcontrol_polkit", "/usr/share/icons/hicolor/16x16/apps/gsmartcontrol.png" },
      {"Hardware Locality lstopo", "lstopo"},
@@ -119,6 +122,7 @@
      {"Manage Printing", "/usr/bin/xdg-open http://localhost:631/", "/usr/share/icons/hicolor/16x16/apps/cups.png" },
      {"OpenJDK Java 14 Console", "/usr/lib/jvm/java-14-openjdk/bin/jconsole"},
      {"OpenJDK Java 14 Shell", "xterm -e /usr/lib/jvm/java-14-openjdk/bin/jshell"},
+     {"Task Manager", "xfce4-taskmanager", "/usr/share/icons/gnome/16x16/apps/utilities-system-monitor.png" },
      {"Tint2", "tint2"},
      {"UXTerm", "uxterm", "/usr/share/pixmaps/xterm-color_48x48.xpm" },
      {"Virtual Machine Manager", "virt-manager", "/usr/share/icons/hicolor/16x16/apps/virt-manager.png" },

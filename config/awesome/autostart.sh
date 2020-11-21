@@ -8,7 +8,7 @@ function run {
 }
 
 run volumeicon
-run xscreensaver
+run cinnamon-screensaver
 run xrdb -load ~/.Xresourses
 run nm-applet
 run conky -c ./.config/conky.conf
