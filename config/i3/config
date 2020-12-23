@@ -32,7 +32,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec xfce4-terminal -e tmux
 
 # kill focused window
 bindsym $mod+Shift+c kill
@@ -188,6 +188,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 focus_follows_mouse no
 
 bindsym $mod+g exec scrot ~/Pictures/screenshot/%Y-%m-%d-%T-screenshot.png
+bindsym $mod+Shift+g exec xclip -selection clipboard -o | qrencode -o - |  feh -Z -
 bindsym $mod+z exec i3lock -i ./Pictures/wp/lock_bg.png -t
 bindsym $mod+Shift+bracketleft move workspace to output left
 bindsym $mod+Shift+bracketright move workspace to output right
@@ -206,6 +207,7 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="feh"] floating enable
 for_window [class="Lxappearance"] floating enable
+for_window [class="XEyes"] floating enable
 #for_window [name="Event Tester"] floating enable
 
 assign [class="Chromium"] 1
