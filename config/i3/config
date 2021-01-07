@@ -208,6 +208,9 @@ for_window [class="Nm-connection-editor"] floating enable
 for_window [class="feh"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="XEyes"] floating enable
+for_window [class="Steam"] floating enable
+for_window [class="Lutris"] floating enable
+for_window [class="Wine"] floating enable
 #for_window [name="Event Tester"] floating enable
 
 assign [class="Chromium"] 1
@@ -217,6 +220,9 @@ assign [class="Nemo"] 3
 assign [class="DBeaver"] 4
 assign [class="Atom"] 5
 assign [class="Geany"] 5
+assign [class="Steam"] 6
+assign [class="Lutris"] 6
+assign [class="Wine"] 6
 
 exec xrandr --output HDMI-A-0 --left-of DisplayPort-0 --noprimary
 exec polybar -r --config=./.config/polybar.conf i3
