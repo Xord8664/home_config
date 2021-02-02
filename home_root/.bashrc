@@ -6,9 +6,11 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-#PS1='[\u@\h \W]\$ '
 alias lsblk="lsblk -o MODEL,NAME,SIZE,UUID,FSTYPE,MOUNTPOINT,LABEL"
 alias ll="ls -lah --color"
+alias cp='cp -iv'
+alias mv='mv -iv'
+
 #[[ -z "$TMUX" ]] && [[ `echo $XTERM_VERSION` = XTerm* ]] && exec tmux
 export EDITOR=vim
 
