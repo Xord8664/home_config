@@ -215,6 +215,8 @@ for_window [class="Wine"] floating enable
 for_window [class="Xfce4-appfinder"] floating enable
 for_window [class="Arandr"] floating enable
 for_window [class="mpv"] floating enable
+for_window [class="ffplay"] floating enable
+for_window [class="^.*"] border pixel 2
 #for_window [name="Event Tester"] floating enable
 
 assign [class="Chromium"] 1
