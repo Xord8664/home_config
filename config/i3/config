@@ -183,7 +183,9 @@ client.focused_inactive #566573 #566573 #dfdfdf #484e50   #5f676a
 client.unfocused        #222222 #222222 #dfdfdf #292d2e   #222222
 client.urgent           #E74C3C #E74C3C #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-
+#~ gaps inner 8
+#~ gaps outer 1
+#~ smart_gaps on
 
 focus_follows_mouse no
 
@@ -216,6 +218,7 @@ for_window [class="Xfce4-appfinder"] floating enable
 for_window [class="Arandr"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="ffplay"] floating enable
+for_window [class="discord"] floating enable
 for_window [class="^.*"] border pixel 2
 #for_window [name="Event Tester"] floating enable
 
@@ -230,6 +233,7 @@ assign [class="Geany"] 5
 assign [class="Steam"] 6
 assign [class="Lutris"] 6
 assign [class="Wine"] 6
+assign [class="discord"] 6
 
 exec xrandr --output HDMI-A-0 --left-of DisplayPort-0 --noprimary
 exec polybar -r --config=./.config/polybar.conf i3
