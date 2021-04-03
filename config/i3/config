@@ -235,7 +235,7 @@ assign [class="Lutris"] 6
 assign [class="Wine"] 6
 assign [class="discord"] 6
 
-exec xrandr --output HDMI-A-0 --left-of DisplayPort-0 --noprimary
+#exec xrandr --output HDMI-A-0 --left-of DisplayPort-0 --noprimary
 exec polybar -r --config=./.config/polybar.conf i3
 exec feh --bg-fill ./Pictures/wp/wp1.jpg
 #exec volumeicon
