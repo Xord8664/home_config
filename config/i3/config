@@ -219,6 +219,7 @@ for_window [class="Arandr"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="ffplay"] floating enable
 for_window [class="discord"] floating enable
+for_window [class="Audacious"] floating enable
 for_window [class="^.*"] border pixel 2
 #for_window [name="Event Tester"] floating enable
 
@@ -227,6 +228,7 @@ assign [class="TelegramDesktop"] 1
 assign [class="Xfce4-terminal"] 2
 assign [class="Alacritty"] 2
 assign [class="Nemo"] 3
+assign [class="Pcmanfm"] 3
 assign [class="DBeaver"] 4
 assign [class="Atom"] 5
 assign [class="Geany"] 5
