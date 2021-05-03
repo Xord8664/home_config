@@ -10,9 +10,12 @@ echo $$ > /tmp/chk_updates.pid
 updates="`checkupdates`"
 to_grep=("linux" "chromium")
 greps=''
+total_updates=0
 
-total_updates=`echo "$updates" | wc -l`
-
+if [[ ! -z "$updates" ]] ; then
+  total_updates=`echo "$updates" | wc -l`
+fi
+  
 for i in ${to_grep[@]} ; do
   declare $i=`echo "$updates" | grep $i | wc -l`
   greps="$i:${!i} $greps"
