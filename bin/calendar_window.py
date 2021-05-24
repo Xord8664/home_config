@@ -6,6 +6,11 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
+default_width = 320
+default_height = 240
+large_width = 1024
+large_height = 768
+
 full_year_mode = False
 today = date.today()
 day = today.strftime("%d")
@@ -28,6 +33,12 @@ mounths = [
 ]
 
 class Test(Gtk.Window):
+    
+    global default_width
+    global default_height
+    global large_width
+    global large_height
+    
     def get_date(self, mounth_num_param, year_num_param):
         global today
         global year
@@ -54,6 +65,13 @@ class Test(Gtk.Window):
         self.box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.add(self.box)
         
+######## For debug resize
+        # ~ button_position = Gtk.Button.new_with_label("Click Me")
+        # ~ button_position.connect("clicked", self.on_click_me_clicked)
+        
+        # ~ button_resize = Gtk.Button.new_with_label("Click Me")
+        # ~ button_resize.connect("clicked", self.on_click_resize)
+
         box_curr_date = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
         box_curr_cal = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
         
@@ -89,14 +107,29 @@ class Test(Gtk.Window):
         box_buttons = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
         box_buttons.pack_start(mounths_combo, True, True, 0)
         box_buttons.pack_start(button_change_year, True, True, 0)
+######## For debug resize
+        # ~ box_buttons.pack_start(button_position, True, True, 0)
+        # ~ box_buttons.pack_start(button_resize, True, True, 0)
 
         self.box.pack_start(box_curr_date, False, True, 3)
         self.box.pack_start(box_curr_cal, True, False, 3)
         self.box.pack_start(box_buttons, False, True, 3)
         
-        self.set_size_request(320, 240)
+######## Determine monitor resolution
+        screen = self.get_screen()
+        monitor = screen.get_monitor_at_window(screen.get_active_window())
+        monitor_geometry = screen.get_monitor_geometry(monitor)
+        self.monitor_width = monitor_geometry.width
+        self.monitor_height = monitor_geometry.height
+        print("Monitor resolution: " + str(monitor_geometry.width) + 'x' + str(monitor_geometry.height))
+        
+######## Set window position (relative on size)
+        self.set_default_size(default_width, default_height)
+        self.move(self.monitor_width - default_width - 30, 30)
+        # ~ self.set_gravity(3) ###### Not works in i3wm
         self.connect("destroy", Gtk.main_quit)
 
+#### Mounth selection
     def change_mounth(self, combo):
         mounth_num = combo.get_active() + 1
         self.get_date(mounth_num, year)
@@ -104,27 +137,49 @@ class Test(Gtk.Window):
             print("year view mode")
         else:
             self.label_mounth.set_text(curr_mounth)
-        
+
+#### Year selection
     def change_year(self, button_change_year):
         year = button_change_year.get_value_as_int()
         self.get_date(mounth_num, year)
         self.get_all_mounths(year)
         if full_year_mode:
-            print("year view mode")
             self.label_mounth.set_text(all_year)
         else:
             self.label_mounth.set_text(curr_mounth)
 
+#### View mode swich (year or per mounth
     def view_switch_activete(self, view_switch, gparam):
-        global full_year_mode
         
+        # ~ self.set_resizable(True)
+        global full_year_mode
+        global default_width
+        global default_height
+        global large_width
+        global large_height
+                
         if self.view_switch.get_active():
+            self.move(self.monitor_width - large_width - 30, 30)
             full_year_mode = True
             self.label_mounth.set_text(all_year)
+            self.set_size_request(large_width, large_height)
+            self.resize(large_width, large_height)
         else:
+            self.move(self.monitor_width - default_width - 30, 30)
             full_year_mode = False
             self.label_mounth.set_text(curr_mounth)
-        print(full_year_mode)
+            self.set_size_request(default_width, default_height)
+            self.resize(default_width, default_height)
+
+#### For debug resize
+
+    # ~ def on_click_me_clicked(self, button_position):
+        # ~ print("change position")
+        # ~ self.move(self.monitor_width - large_width - 30, 30)
+    
+    # ~ def on_click_resize(self, button_resize):
+        # ~ print("resize")
+        # ~ self.resize(large_width, large_height)
 
 win = Test()
 win.connect("delete-event", Gtk.main_quit)
