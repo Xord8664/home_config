@@ -97,10 +97,13 @@ class Test(Gtk.Window):
 
         self.add(box_curr_date)
         self.add(box_curr_cal)
-        self.label_curr_date = Gtk.Label("Today: " + str(year) + "-" + str(mounth_num_curr) + "-" + str(day))
+        # ~ self.label_curr_date = Gtk.Label("Today: " + str(year) + "-" + str(mounth_num_curr) + "-" + str(day))
+        self.label_year_mode = Gtk.Label("View all year: ")
+        
         self.label_mounth = Gtk.Label(curr_mounth)
         
-        box_curr_date.pack_start(self.label_curr_date, True, True, 3)
+        # ~ box_curr_date.pack_start(self.label_curr_date, True, True, 3)
+        box_curr_date.pack_start(self.label_year_mode, True, False, 3)
         box_curr_date.pack_start(self.view_switch, False, False, 3)
         box_curr_cal.pack_start(self.label_mounth, True, True, 3)
         
