@@ -65,6 +65,9 @@ class Test(Gtk.Window):
         self.box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.add(self.box)
         
+        exit_button = Gtk.Button.new_with_label(("X"))
+        exit_button.connect("clicked", self.on_exit_clicked)
+        
 ######## For debug resize
         # ~ button_position = Gtk.Button.new_with_label("Click Me")
         # ~ button_position.connect("clicked", self.on_click_me_clicked)
@@ -103,8 +106,9 @@ class Test(Gtk.Window):
         self.label_mounth = Gtk.Label(curr_mounth)
         
         # ~ box_curr_date.pack_start(self.label_curr_date, True, True, 3)
-        box_curr_date.pack_start(self.label_year_mode, True, False, 3)
-        box_curr_date.pack_start(self.view_switch, False, False, 3)
+        box_curr_date.pack_end(exit_button, False, False, 3)
+        box_curr_date.pack_end(self.view_switch, False, False, 3)
+        box_curr_date.pack_end(self.label_year_mode, False, False, 3)
         box_curr_cal.pack_start(self.label_mounth, True, True, 3)
         
         box_buttons = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
@@ -173,6 +177,9 @@ class Test(Gtk.Window):
             self.label_mounth.set_text(curr_mounth)
             self.set_size_request(default_width, default_height)
             self.resize(default_width, default_height)
+            
+    def on_exit_clicked(self, widget):
+        self.destroy()
 
 #### For debug resize
 
