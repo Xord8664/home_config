@@ -221,6 +221,9 @@ for_window [class="ffplay"] floating enable
 for_window [class="discord"] floating enable
 for_window [class="Audacious"] floating enable
 for_window [class="^.*"] border pixel 2
+for_window [class="XTerm"] floating enable
+for_window [class="test_class"] floating enable
+
 #for_window [name="Event Tester"] floating enable
 
 assign [class="Chromium"] 1
@@ -242,5 +245,5 @@ exec polybar -r --config=./.config/polybar.conf i3
 exec feh --bg-fill ./Pictures/wp/wp1.jpg
 #exec volumeicon
 exec --no-startup-id xset dpms 0 0 600
-#exec xrdb -load ~/.Xresourses
+exec xrdb -merge ~/.Xresourses
 exec nm-applet
