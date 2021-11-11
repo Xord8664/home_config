@@ -14,7 +14,7 @@ font:
   bold_italic:
     family: Ubuntu Mono
     style: Bold Italic
-  size: 11
+  size: 10
 
 # Colors (iTerm 2 default theme)
 colors:
